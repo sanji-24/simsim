@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page sécurisée</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .content {
+            display: none;
+            text-align: center;
+        }
+        .content.visible {
+            display: block;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="content">
+        <h1>Bienvenue à la page sécurisée !</h1>
+    </div>
+
+    <script type="text/javascript">
+        var idCorrect = "nunuche";
+        var mdpCorrect = "simsim";
+
+        var id = prompt("Veuillez entrer votre identifiant :");
+        var mdp = prompt("Veuillez entrer votre mot de passe :");
+
+        if (id !== idCorrect || mdp !== mdpCorrect) {
+            if(id === idCorrect) {
+                alert("Mot de passe incorrect ! Veuillez contacter votre supérieur.");
+            } else {
+                alert("Identifiant incorrect !");
+            }
+            window.location.reload();
+        } else {
+            document.getElementById('content').classList.add('visible');
+        }
+    </script>
+</body>
+</html>
